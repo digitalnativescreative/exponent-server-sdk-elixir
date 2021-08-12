@@ -43,7 +43,7 @@ defmodule ExponentServerSdk.PushNotification do
     messages
     |> PushMessage.create_from_list()
 
-    PushNotification.post!("send", message, [], opts)
+    PushNotification.post!("send", messages, [], opts)
     |> Parser.parse_list()
   end
 
