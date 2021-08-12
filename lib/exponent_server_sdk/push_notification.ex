@@ -80,6 +80,14 @@ defmodule ExponentServerSdk.PushNotification do
   end
 
   @doc """
+  Automatically adds the correct options to each API request.
+  """
+  def process_request_options(options \\ []) do
+    options = options ++ [timeout: 60_000, recv_timeout: 60_000]
+    options
+  end
+
+  @doc """
   Automatically process the request body using Poison JSON and GZip.
   """
   def process_request_body(body) do
